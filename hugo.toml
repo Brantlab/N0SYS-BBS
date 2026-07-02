@@ -42,3 +42,4 @@ enableRobotsTXT = true
 [caches]
   [caches.images]
     dir = ":cacheDir/images"
+ 
