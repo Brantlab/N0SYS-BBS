@@ -1,4 +1,4 @@
-name = "N0SYS BBS"
+name = "NØSYS BBS"
 license = "MIT"
 licenselink = "https://opensource.org/license/mit"
 description = "An old-school packet radio BBS theme for Hugo."
@@ -8,5 +8,4 @@ features = ["responsive", "rss", "syntax-highlighting"]
 min_version = "0.112.0"
 
 [author]
-  name = "N0SYS"
-
+  name = "NØSYS"

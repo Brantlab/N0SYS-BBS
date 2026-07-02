@@ -1,11 +1,12 @@
 baseURL = "https://n0sys.net/"
 languageCode = "en-us"
-title = "N0SYS Packet Board"
+title = "NØSYS Packet Board"
 theme = "n0sys-bbs"
 enableRobotsTXT = true
 
 [params]
   callsign = "N0SYS"
+  displayCallsign = "NØSYS"
   frequency = "145.070 MHz"
   location = "EN70"
   operator = "SYSOP"

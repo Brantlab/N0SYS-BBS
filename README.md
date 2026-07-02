@@ -1,4 +1,4 @@
-# N0SYS BBS
+# NØSYS BBS
 
 A complete Hugo starter site and reusable theme inspired by amateur-radio packet
 bulletin boards, glowing CRT terminals, and late-night connections over AX.25.

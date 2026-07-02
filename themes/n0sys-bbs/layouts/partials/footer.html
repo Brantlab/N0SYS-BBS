@@ -1,8 +1,7 @@
 <footer class="site-footer">
   <div>
     <span>NO CARRIER</span>
-    <span class="dim"> · {{ site.Params.callsign }} BBS · POWERED BY HUGO</span>
+    <span class="dim"> · {{ site.Params.displayCallsign | default site.Params.callsign }} BBS · POWERED BY HUGO</span>
   </div>
   <a href="#top" aria-label="Return to top">[ TOP ]</a>
 </footer>
-

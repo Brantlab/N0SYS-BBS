@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#100c05">
     <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <meta property="og:site_name" content="{{ site.Params.displayCallsign | default site.Title }}">
     <title>{{ if not .IsHome }}{{ .Title }} // {{ end }}{{ site.Title }}</title>
+    <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
     {{ with resources.Get "css/main.css" }}
       {{ if hugo.IsProduction }}
         {{ with . | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}

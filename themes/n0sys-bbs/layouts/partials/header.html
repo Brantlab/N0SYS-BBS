@@ -9,7 +9,7 @@
   <div class="masthead">
     <a class="station-id" href="{{ site.Home.RelPermalink }}" aria-label="{{ site.Title }} home">
       <span class="prompt">&gt;</span>
-      <span class="callsign">{{ site.Params.callsign | default site.Title }}</span>
+      <span class="callsign">{{ site.Params.displayCallsign | default site.Params.callsign | default site.Title }}</span>
       <span class="cursor" aria-hidden="true">_</span>
     </a>
     <div class="station-copy">
