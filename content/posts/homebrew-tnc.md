@@ -1,6 +1,6 @@
 +++
 title = "Homebrew TNC: first packets decoded"
-date = 2026-06-17T22:03:00-04:00
+date = 2026-12-17T22:03:00-04:00
 author = "K2MCK"
 callsign = "K2MCK"
 board = "TECH"

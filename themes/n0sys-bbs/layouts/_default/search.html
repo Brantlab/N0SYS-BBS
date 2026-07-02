@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <header class="page-heading search-heading">
+    <p class="command"><span class="prompt">&gt;</span> FIND /PUBLIC/MSGS</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Description }}</p>
+  </header>
+
+  <form class="search-terminal" id="search-form" role="search">
+    <label for="search-query"><span class="prompt">&gt;</span> SEARCH:</label>
+    <input
+      id="search-query"
+      name="q"
+      type="search"
+      placeholder="CALLSIGN, BOARD, SUBJECT..."
+      autocomplete="off"
+      spellcheck="false"
+      autofocus
+    >
+    <button type="submit">[ EXEC ]</button>
+  </form>
+  <p class="search-hint">PRESS <kbd>/</kbd> TO SEARCH · <kbd>ESC</kbd> TO CLEAR · MINIMUM 2 CHARACTERS</p>
+
+  <section
+    class="message-base search-output"
+    id="search-output"
+    data-index-url="{{ with site.Home.OutputFormats.Get "JSON" }}{{ .RelPermalink }}{{ else }}{{ "index.json" | relURL }}{{ end }}"
+  >
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">/SEARCH/RESULTS</p>
+        <h2 id="search-status">Awaiting query</h2>
+      </div>
+    </div>
+    <div class="message-header" aria-hidden="true">
+      <span>NO.</span><span>DATE</span><span>BOARD</span><span>SUBJECT</span><span>FROM</span>
+    </div>
+    <div class="message-list" id="search-results" aria-live="polite">
+      <p class="empty">ENTER SEARCH TERMS TO SCAN THE MESSAGE BASE.</p>
+    </div>
+    <noscript><p class="empty">SEARCH REQUIRES JAVASCRIPT TO READ THE LOCAL MESSAGE INDEX.</p></noscript>
+  </section>
+{{ end }}
+

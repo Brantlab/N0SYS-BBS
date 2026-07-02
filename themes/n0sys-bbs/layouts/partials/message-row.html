@@ -1,7 +1,7 @@
 <article class="message-row">
   <a class="message-link" href="{{ .page.RelPermalink }}" aria-label="Read {{ .page.Title }}">
     <span class="message-number">{{ printf "%03d" .index }}</span>
-    <span class="message-date">{{ .page.Date.Format "02 JAN" | upper }}</span>
+    <span class="message-date">{{ .page.Date.Format "02 Jan" | upper }}</span>
     <span class="message-board">[{{ .page.Params.board | default "GENERAL" | upper }}]</span>
     <span class="message-title">{{ .page.Title }}</span>
     <span class="message-from">{{ .page.Params.callsign | default .page.Params.author | default "ANON" | upper }}</span>

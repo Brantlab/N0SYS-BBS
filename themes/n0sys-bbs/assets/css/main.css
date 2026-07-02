@@ -346,6 +346,76 @@ h3 { font-size: 1.55rem; }
 
 .page-heading > p:last-child { max-width: 650px; color: var(--ink-dim); }
 
+.search-heading { margin-bottom: 1.5rem; }
+
+.search-terminal {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--line);
+  background: #050403;
+  box-shadow: inset 0 0 18px rgba(0, 0, 0, 0.6);
+}
+
+.search-terminal label {
+  color: var(--ink-bright);
+  font-family: var(--display);
+  font-size: 1.4rem;
+  letter-spacing: 0.04em;
+}
+
+.search-terminal input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-bottom: 1px solid var(--ink-dim);
+  border-radius: 0;
+  outline: 0;
+  color: var(--ink-bright);
+  background: transparent;
+  font: inherit;
+  text-transform: uppercase;
+  caret-color: var(--danger);
+}
+
+.search-terminal input::placeholder { color: var(--ink-dim); opacity: 0.65; }
+
+.search-terminal input:focus {
+  border-color: var(--ink-bright);
+  box-shadow: 0 2px 0 var(--glow);
+}
+
+.search-terminal input::-webkit-search-cancel-button { filter: sepia(1); }
+
+.search-terminal button {
+  border: 0;
+  color: var(--ink-bright);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.search-terminal button:hover,
+.search-terminal button:focus-visible {
+  color: var(--paper);
+  outline: 0;
+  background: var(--ink-bright);
+}
+
+.search-hint {
+  margin: 0.6rem 0 3rem;
+  color: var(--ink-dim);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.search-output h2 {
+  margin: 0.15rem 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
 .bulletin {
   position: relative;
   max-width: 780px;
@@ -484,6 +554,8 @@ h3 { font-size: 1.55rem; }
   .station-copy { margin-top: 1.5rem; padding-left: 0; border-left: 0; }
   main { padding: 2rem 1rem; }
   .welcome-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .search-terminal { grid-template-columns: auto 1fr; }
+  .search-terminal button { grid-column: 1 / -1; justify-self: end; }
 
   .message-header { display: none; }
   .message-link {
@@ -509,4 +581,3 @@ h3 { font-size: 1.55rem; }
   .status-light,
   .cursor { animation: none; }
 }
-

@@ -1,0 +1,16 @@
+{{- $messages := slice -}}
+{{- range where site.RegularPages "Section" "posts" -}}
+  {{- $messages = $messages | append (dict
+    "title" .Title
+    "permalink" .RelPermalink
+    "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "displayDate" (upper (.Date.Format "02 Jan"))
+    "callsign" (upper (.Params.callsign | default .Params.author | default "ANON"))
+    "board" (upper (.Params.board | default "GENERAL"))
+    "subject" (upper (.Params.subject | default ""))
+    "summary" (.Summary | plainify)
+    "tags" (.Params.tags | default slice)
+    "content" (.Plain | plainify)
+  ) -}}
+{{- end -}}
+{{- $messages | jsonify -}}
