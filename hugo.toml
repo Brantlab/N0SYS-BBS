@@ -1,0 +1,36 @@
+baseURL = "https://n0sys.net/"
+languageCode = "en-us"
+title = "N0SYS Packet Board"
+theme = "n0sys-bbs"
+enableRobotsTXT = true
+
+[params]
+  callsign = "N0SYS"
+  frequency = "145.070 MHz"
+  location = "EN70"
+  operator = "SYSOP"
+  tagline = "Amateur Radio Packet Bulletin Board"
+  description = "A small corner of the airwaves for packet radio, homebrew, and local nets."
+  accent = "amber"
+  onlineSince = "1993"
+
+[menu]
+  [[menu.main]]
+    name = "Messages"
+    pageRef = "/posts"
+    weight = 10
+  [[menu.main]]
+    name = "Station"
+    pageRef = "/station"
+    weight = 20
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"

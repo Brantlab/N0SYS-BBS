@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#100c05">
+    <meta name="description" content="{{ .Description | default site.Params.description }}">
+    <title>{{ if not .IsHome }}{{ .Title }} // {{ end }}{{ site.Title }}</title>
+    {{ with resources.Get "css/main.css" }}
+      {{ if hugo.IsProduction }}
+        {{ with . | minify | fingerprint }}<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">{{ end }}
+      {{ else }}
+        <link rel="stylesheet" href="{{ .RelPermalink }}">
+      {{ end }}
+    {{ end }}
+    <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | relURL }}" title="{{ site.Title }}">
+  </head>
+  <body id="top" class="accent-{{ site.Params.accent | default "amber" }}">
+    <a class="skip-link" href="#main">Skip to messages</a>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="terminal-shell">
+      {{ partial "header.html" . }}
+      <main id="main">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ partial "footer.html" . }}
+    </div>
+    {{ with resources.Get "js/main.js" }}
+      {{ if hugo.IsProduction }}
+        {{ with . | minify | fingerprint }}<script src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}"></script>{{ end }}
+      {{ else }}
+        <script src="{{ .RelPermalink }}"></script>
+      {{ end }}
+    {{ end }}
+  </body>
+</html>

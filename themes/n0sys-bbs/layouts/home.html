@@ -1,0 +1,43 @@
+{{ define "main" }}
+  <section class="welcome panel">
+    <div class="panel-label">WELCOME.TXT</div>
+    <div class="welcome-grid">
+      <div>
+        <p class="command"><span class="prompt">&gt;</span> CONNECT {{ site.Params.callsign }}</p>
+        <div class="prose intro">{{ .Content }}</div>
+      </div>
+      <dl class="station-stats">
+        <div><dt>NODE</dt><dd>{{ site.Params.callsign }}</dd></div>
+        <div><dt>FREQ</dt><dd>{{ site.Params.frequency }}</dd></div>
+        <div><dt>GRID</dt><dd>{{ site.Params.location }}</dd></div>
+        <div><dt>MSGS</dt><dd>{{ len (where site.RegularPages "Section" "posts") }}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="message-base">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">/PUBLIC/MSGS</p>
+        <h1>Latest bulletins</h1>
+      </div>
+      <a href="{{ "posts/" | relURL }}">View all [→]</a>
+    </div>
+    <div class="message-header" aria-hidden="true">
+      <span>NO.</span><span>DATE</span><span>BOARD</span><span>SUBJECT</span><span>FROM</span>
+    </div>
+    <div class="message-list">
+      {{ range $index, $page := first 8 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
+        {{ partial "message-row.html" (dict "page" $page "index" (add $index 1)) }}
+      {{ else }}
+        <p class="empty">0 MESSAGES FOUND. THE CHANNEL IS QUIET.</p>
+      {{ end }}
+    </div>
+  </section>
+
+  <div class="system-note">
+    <span class="signal-bars" aria-hidden="true">▂▄▆█</span>
+    <p><strong>CHANNEL NOTE:</strong> Listen first. Keep transmissions concise. Be excellent to each other. 73.</p>
+  </div>
+{{ end }}
+

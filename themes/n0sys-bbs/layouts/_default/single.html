@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <article class="bulletin">
+    <header class="bulletin-header">
+      <p class="command"><span class="prompt">&gt;</span> READ {{ .File.ContentBaseName | upper }}</p>
+      <div class="packet-stamp">BULLETIN</div>
+      <h1>{{ .Title }}</h1>
+      <dl class="message-meta">
+        <div><dt>FROM</dt><dd>{{ .Params.callsign | default .Params.author | default site.Params.callsign | upper }}</dd></div>
+        <div><dt>BOARD</dt><dd>{{ .Params.board | default "GENERAL" | upper }}</dd></div>
+        <div><dt>DATE</dt><dd><time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "2006-01-02 15:04 MST" }}</time></dd></div>
+        {{ with .Params.subject }}<div><dt>SUBJ</dt><dd>{{ . | upper }}</dd></div>{{ end }}
+      </dl>
+    </header>
+
+    <div class="prose">{{ .Content }}</div>
+
+    {{ with .GetTerms "tags" }}
+      <footer class="tags">
+        <span>FLAGS:</span>
+        {{ range . }}<a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>{{ end }}
+      </footer>
+    {{ end }}
+  </article>
+  <nav class="post-nav" aria-label="Adjacent messages">
+    {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← PREV: {{ .Title }}</a>{{ end }}
+    {{ with .NextInSection }}<a href="{{ .RelPermalink }}">NEXT: {{ .Title }} →</a>{{ end }}
+  </nav>
+{{ end }}
+

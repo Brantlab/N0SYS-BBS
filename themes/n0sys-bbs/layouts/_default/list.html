@@ -1,0 +1,21 @@
+{{ define "main" }}
+  <header class="page-heading">
+    <p class="command"><span class="prompt">&gt;</span> LIST {{ .Section | default .Title | upper }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </header>
+
+  <section class="message-base">
+    <div class="message-header" aria-hidden="true">
+      <span>NO.</span><span>DATE</span><span>BOARD</span><span>SUBJECT</span><span>FROM</span>
+    </div>
+    <div class="message-list">
+      {{ range $index, $page := .Pages.ByDate.Reverse }}
+        {{ partial "message-row.html" (dict "page" $page "index" (add $index 1)) }}
+      {{ else }}
+        <p class="empty">0 MESSAGES FOUND. THE CHANNEL IS QUIET.</p>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}
+
