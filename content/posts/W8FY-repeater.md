@@ -1,8 +1,8 @@
 +++
 title = "County 2M Repeater"
 date = 2026-06-24T08:15:00-04:00
-author = "W8FY"
-callsign = "W8FY"
+author = "N0SYS"
+callsign = "N0SYS"
 board = "SYSOP"
 subject = "INFO"
 summary = "Information about the W8FY 146.850 MHz repeater located in Middle Point, Ohio."
