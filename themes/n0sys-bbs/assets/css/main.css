@@ -458,11 +458,75 @@ h3 { font-size: 1.55rem; }
 .message-meta dt { color: var(--ink-dim); }
 .message-meta dd { margin: 0; color: var(--ink-bright); }
 
-.prose { color: #d4a54b; }
+.prose {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  color: #d4a54b;
+}
 .prose > :first-child { margin-top: 0; }
 .prose > :last-child { margin-bottom: 0; }
 .prose strong { color: var(--ink-bright); }
 .prose li { margin-bottom: 0.3rem; }
+
+.prose img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(70vh, 680px);
+  margin: 1.5rem auto;
+  border: 1px solid var(--line);
+  object-fit: contain;
+  background: #050403;
+  cursor: zoom-in;
+}
+
+.prose img:focus-visible {
+  outline: 2px solid var(--ink-bright);
+  outline-offset: 4px;
+}
+
+.image-lightbox {
+  position: fixed;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  border: 0;
+  background: rgba(5, 4, 3, 0.88);
+}
+
+.image-lightbox[hidden] { display: none; }
+
+.image-lightbox img {
+  max-width: min(100%, 1200px);
+  max-height: 86vh;
+  border: 1px solid var(--line);
+  object-fit: contain;
+  background: #050403;
+  box-shadow: 0 0 42px rgba(0, 0, 0, 0.78), 0 0 20px var(--glow);
+}
+
+.image-lightbox button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--line);
+  color: var(--ink-bright);
+  background: var(--paper-raised);
+  font: inherit;
+  cursor: pointer;
+}
+
+.image-lightbox button:hover,
+.image-lightbox button:focus-visible {
+  color: var(--paper);
+  outline: 0;
+  background: var(--ink-bright);
+}
 
 .prose blockquote {
   margin-left: 0;
@@ -488,7 +552,11 @@ h3 { font-size: 1.55rem; }
 
 .prose table {
   width: 100%;
+  max-width: 100%;
+  display: block;
+  margin: 1.5rem 0;
   border-collapse: collapse;
+  overflow-x: auto;
 }
 
 .prose th,
@@ -501,6 +569,134 @@ h3 { font-size: 1.55rem; }
 .prose th {
   color: var(--paper);
   background: var(--ink-dim);
+}
+
+.qso-map {
+  position: relative;
+  margin: 2rem 0;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(rgba(243, 184, 75, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243, 184, 75, 0.045) 1px, transparent 1px),
+    #050403;
+  background-size: 36px 36px;
+}
+
+.qso-map svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+}
+
+.qso-map svg {
+  cursor: grab;
+  touch-action: none;
+}
+
+.qso-map svg.is-panning {
+  cursor: grabbing;
+}
+
+.qso-map-controls {
+  position: absolute;
+  z-index: 1;
+  top: 0.6rem;
+  right: 0.6rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.qso-map-controls button {
+  width: 1.9rem;
+  height: 1.9rem;
+  border: 1px solid var(--line);
+  color: var(--ink-bright);
+  background: rgba(18, 16, 7, 0.92);
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.qso-map-controls button:hover,
+.qso-map-controls button:focus-visible {
+  color: var(--paper);
+  outline: 0;
+  background: var(--ink-bright);
+}
+
+.qso-map .map-title,
+.qso-map .map-note {
+  fill: var(--ink-bright);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.qso-map .map-note {
+  fill: var(--ink-dim);
+  font-size: 10px;
+}
+
+.qso-map .map-frame,
+.qso-map .map-gridline {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+}
+
+.qso-map .map-world {
+  opacity: 0.82;
+  pointer-events: none;
+}
+
+.qso-map .map-path {
+  fill: none;
+  stroke: rgba(255, 215, 130, 0.45);
+  stroke-width: 1.2;
+}
+
+.qso-map .map-contact {
+  cursor: pointer;
+}
+
+.qso-map .map-point {
+  fill: var(--danger);
+  stroke: var(--ink-bright);
+  stroke-width: 1.4;
+}
+
+.qso-map .map-contact:hover .map-point,
+.qso-map .map-contact:focus .map-point {
+  stroke: #fff1c9;
+  stroke-width: 2.4;
+}
+
+.qso-map .map-home {
+  fill: #70ef8d;
+  stroke: var(--ink-bright);
+  stroke-width: 1.6;
+}
+
+.qso-map .map-label {
+  fill: var(--ink-bright);
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.qso-map .map-label-bg {
+  fill: rgba(5, 4, 3, 0.82);
+  stroke: rgba(79, 57, 25, 0.65);
+}
+
+.qso-map .map-contact:hover .map-label-bg,
+.qso-map .map-contact:focus .map-label-bg {
+  fill: rgba(5, 4, 3, 0.95);
+  stroke: var(--ink-bright);
+}
+
+.qso-map .map-band-40m {
+  fill: #7fd6ff;
 }
 
 .tags {
