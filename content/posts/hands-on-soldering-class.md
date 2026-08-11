@@ -1,7 +1,7 @@
 +++
 title = "A Hands-On Soldering Class at the Maker's Space"
 date = "2026-08-10T21:00:00-04:00"
-draft = true
+draft = false
 author = "N0SYS"
 callsign = "N0SYS"
 board = "MAKER"
