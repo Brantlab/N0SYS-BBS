@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="W8FY North American QSO Party SSB contact log and statistics for August 2026.">
+  <title>W8FY · NAQP SSB 2026 Contest Log</title>
+  <style>
+    :root { color-scheme: dark; --bg:#071312; --panel:#0d201e; --line:#244a43; --text:#d7e9e2; --muted:#8eaaa1; --green:#55dba3; --amber:#f2b661; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; }
+    main { width:min(1180px,94vw); margin:0 auto; padding:42px 0 64px; }
+    a { color:var(--green); }
+    .eyebrow { margin:0 0 8px; color:var(--amber); letter-spacing:.13em; text-transform:uppercase; }
+    h1 { margin:0; font-size:clamp(2rem,5vw,4.5rem); line-height:1; color:#f2fff9; }
+    .intro { max-width:850px; color:var(--muted); font-size:1.05rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 30px; }
+    .button { display:inline-block; padding:10px 14px; border:1px solid var(--line); border-radius:7px; background:var(--panel); text-decoration:none; }
+    .button:hover { border-color:var(--green); }
+    .cards { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:22px 0; }
+    .card,.panel { border:1px solid var(--line); border-radius:10px; background:var(--panel); }
+    .card { padding:18px; }
+    .label { color:var(--muted); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .value { margin-top:5px; color:#fff; font-size:clamp(1.6rem,4vw,2.6rem); font-weight:700; }
+    .split { display:grid; grid-template-columns:1fr 1.25fr; gap:16px; margin:16px 0 30px; }
+    .panel { padding:18px; overflow:auto; }
+    h2 { margin:0 0 12px; color:var(--amber); font-size:1.1rem; }
+    table { width:100%; border-collapse:collapse; }
+    th,td { padding:9px 10px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; }
+    th { color:var(--amber); font-size:.8rem; letter-spacing:.04em; text-transform:uppercase; }
+    td.num,th.num { text-align:right; }
+    tbody tr:hover { background:#12302b; }
+    .filters { display:grid; grid-template-columns:2fr 1fr 1fr; gap:10px; margin-bottom:12px; }
+    input,select { width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:7px; background:#071513; color:var(--text); font:inherit; }
+    .table-wrap { max-height:70vh; overflow:auto; border:1px solid var(--line); border-radius:8px; }
+    .table-wrap thead { position:sticky; top:0; z-index:1; background:#112825; }
+    .count { margin:10px 0 0; color:var(--muted); font-size:.9rem; }
+    footer { margin-top:28px; color:var(--muted); font-size:.85rem; }
+    @media (max-width:760px) { .cards { grid-template-columns:1fr 1fr; } .split { grid-template-columns:1fr; } .filters { grid-template-columns:1fr; } th,td { padding:8px; } }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">W8FY · Club Station · Multi-Operator / Two Transmitters</p>
+  <h1>NAQP SSB Contest Log</h1>
+  <p class="intro">The W8FY club station's complete contact log from the August 15–16, 2026 North American QSO Party SSB. The team operated with two transmitters at 100 watts or less.</p>
+
+  <nav class="actions" aria-label="Log downloads">
+    <a class="button" href="/posts/north-american-qso-party-ssb-2026/">← Read the full story</a>
+    <a class="button" href="contacts.csv" download>Download CSV log</a>
+    <a class="button" href="/images/08-15-26%20NAQP/naqp-ssb-log-20260816-1820.xlsx" download>Download Excel log</a>
+  </nav>
+
+  <section class="cards" aria-label="Contest totals">
+    <div class="card"><div class="label">Valid QSOs</div><div class="value">313</div></div>
+    <div class="card"><div class="label">Multipliers</div><div class="value">79</div></div>
+    <div class="card"><div class="label">Estimated Score</div><div class="value">24,727</div></div>
+    <div class="card"><div class="label">Operators</div><div class="value">3</div></div>
+  </section>
+
+  <section class="split">
+    <div class="panel">
+      <h2>Band Results</h2>
+      <table>
+        <thead><tr><th>Band</th><th class="num">QSOs</th><th class="num">Mults</th></tr></thead>
+        <tbody>
+          <tr><td>160m</td><td class="num">6</td><td class="num">6</td></tr>
+          <tr><td>80m</td><td class="num">7</td><td class="num">5</td></tr>
+          <tr><td>40m</td><td class="num">221</td><td class="num">42</td></tr>
+          <tr><td>20m</td><td class="num">53</td><td class="num">20</td></tr>
+          <tr><td>15m</td><td class="num">26</td><td class="num">6</td></tr>
+          <tr><td>10m</td><td class="num">0</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h2>Operator Results</h2>
+      <table>
+        <thead><tr><th>Operator</th><th class="num">160m</th><th class="num">80m</th><th class="num">40m</th><th class="num">20m</th><th class="num">15m</th><th class="num">Total</th></tr></thead>
+        <tbody>
+          <tr><td>KD9YVI</td><td class="num">6</td><td class="num">0</td><td class="num">144</td><td class="num">50</td><td class="num">26</td><td class="num">226</td></tr>
+          <tr><td>N0SYS</td><td class="num">0</td><td class="num">7</td><td class="num">75</td><td class="num">3</td><td class="num">0</td><td class="num">85</td></tr>
+          <tr><td>KE8PYI</td><td class="num">0</td><td class="num">0</td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">2</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>All Contacts</h2>
+    <div class="filters">
+      <input id="search" type="search" placeholder="Search call, exchange, operator…" aria-label="Search contacts">
+      <select id="band" aria-label="Filter by band"><option value="">All bands</option><option>160m</option><option>80m</option><option>40m</option><option>20m</option><option>15m</option><option>10m</option></select>
+      <select id="operator" aria-label="Filter by operator"><option value="">All operators</option><option>KD9YVI</option><option>N0SYS</option><option>KE8PYI</option></select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>UTC Date</th><th>UTC Time</th><th>Call</th><th>Band</th><th>Mode</th><th>Operator</th><th>Exchange</th></tr></thead>
+        <tbody id="contacts"><tr><td colspan="7">Loading contact log…</td></tr></tbody>
+      </table>
+    </div>
+    <p class="count" id="count"></p>
+  </section>
+
+  <footer>Statistics are based on the Wavelog contest dashboard and exported W8FY station log. The displayed score is estimated pending final log review.</footer>
+</main>
+<script>
+  const body = document.querySelector('#contacts');
+  const count = document.querySelector('#count');
+  const controls = [...document.querySelectorAll('#search,#band,#operator')];
+  let contacts = [];
+
+  function parseCSV(text) {
+    return text.trim().split(/\r?\n/).slice(1).map(line => line.split(',')).map(([date,time,call,band,mode,operator,exchange]) => ({date,time,call,band,mode,operator,exchange}));
+  }
+
+  function escapeHTML(value) {
+    return value.replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+  }
+
+  function render() {
+    const query = document.querySelector('#search').value.trim().toUpperCase();
+    const band = document.querySelector('#band').value;
+    const operator = document.querySelector('#operator').value;
+    const rows = contacts.filter(contact => (!query || Object.values(contact).join(' ').toUpperCase().includes(query)) && (!band || contact.band === band) && (!operator || contact.operator === operator));
+    body.innerHTML = rows.map(contact => `<tr><td>${escapeHTML(contact.date)}</td><td>${escapeHTML(contact.time)}</td><td>${escapeHTML(contact.call)}</td><td>${escapeHTML(contact.band)}</td><td>${escapeHTML(contact.mode)}</td><td>${escapeHTML(contact.operator)}</td><td>${escapeHTML(contact.exchange)}</td></tr>`).join('') || '<tr><td colspan="7">No matching contacts.</td></tr>';
+    count.textContent = `Showing ${rows.length} of ${contacts.length} contacts`;
+  }
+
+  fetch('contacts.csv').then(response => {
+    if (!response.ok) throw new Error('Unable to load contact log.');
+    return response.text();
+  }).then(text => {
+    contacts = parseCSV(text);
+    controls.forEach(control => control.addEventListener('input', render));
+    render();
+  }).catch(error => {
+    body.innerHTML = `<tr><td colspan="7">${escapeHTML(error.message)}</td></tr>`;
+  });
+</script>
+</body>
+</html>

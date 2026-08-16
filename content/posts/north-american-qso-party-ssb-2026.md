@@ -6,13 +6,13 @@ author = "N0SYS"
 callsign = "N0SYS"
 board = "CONTEST"
 subject = "NAQP SSB — AUGUST 2026"
-summary = "Two transmitters, 100 watts, 313 contacts, a new IC-7300MK2, a few antenna challenges, and plenty learned during our first semi-serious NAQP effort."
+summary = "Operating as W8FY from the club station, our team used two transmitters and 100 watts to make 313 contacts during our first semi-serious NAQP effort."
 tags = ["NAQP", "contest", "SSB", "multi-operator", "Icom", "Wavelog", "W8FY"]
 +++
 
 # Our First Serious Run at the North American QSO Party
 
-On Saturday, August 15, we made our first semi-serious run at the **North American QSO Party SSB**. We operated as a multi-operator station with two transmitters, keeping our output at the contest limit of **100 watts or less**. By the end of the event, we had logged **313 valid contacts**, found **79 multipliers**, and reached an estimated score of **24,727 points**.
+On Saturday, August 15, we made our first semi-serious run at the **North American QSO Party SSB**, operating under the **W8FY club callsign from the W8FY club station**. We operated as a multi-operator station with two transmitters, keeping our output at the contest limit of **100 watts or less**. By the end of the event, we had logged **313 valid contacts**, found **79 multipliers**, and reached an estimated score of **24,727 points**.
 
 That was a satisfying result for a first real attempt, especially because the day was about much more than the score. We tested new equipment, worked around antenna problems, welcomed visitors, learned where our setup needs improvement, and had a great time doing it.
 
@@ -33,6 +33,11 @@ The log tells the story of the day:
 | **Total** | **313** | **79** |
 
 Three operators put contacts in the log: **KD9YVI made 226**, **N0SYS made 85**, and **KE8PYI made 2**. The first QSO was logged at 18:15 UTC and the last at 05:58 UTC, giving us activity across almost the entire 12-hour contest window despite taking breaks along the way.
+
+The complete W8FY contest log is available in a searchable online view, along with band and operator statistics. The original spreadsheet and a CSV export can also be downloaded there.
+
+- [Explore the W8FY NAQP contest log and statistics](/logs/w8fy-naqp-ssb-2026/)
+- [Download the original Excel contact log](/images/08-15-26%20NAQP/naqp-ssb-log-20260816-1820.xlsx)
 
 ![The two-transmitter station with Wavelog and the custom contest dashboard in use.](/images/08-15-26%20NAQP/web/02-two-transmitter-station.jpg)
 
@@ -56,7 +61,9 @@ One feature became especially valuable as the hours added up: the radio's voice 
 
 ## Logging as a Team
 
-**Wavelog was instrumental** in making the multi-operator setup work. Its club mode kept the stations together and let us see who made each contact. The finished log shows how the work was shared among the operators and gives us solid information to review before our next contest.
+It deserves repeating that every one of these contacts was made using **W8FY**, from the club's station. This was a club effort from beginning to end, and it gave us an excellent opportunity to exercise the station, learn how our equipment behaves under contest conditions, and build experience together.
+
+**Wavelog was instrumental** in making the multi-operator setup work. Its club mode kept both stations together under W8FY while still recording the individual operator responsible for each contact. The finished log shows how the work was shared among the operators and gives us solid information to review before our next contest.
 
 We also built a custom contest dashboard to show our valid QSOs, multipliers, estimated score, band totals, worked areas, needed areas, and recent contacts. Instead of guessing how we were doing, everyone could see the same picture at a glance.
 
